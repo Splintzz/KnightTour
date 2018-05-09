@@ -5,13 +5,13 @@
  */
 public class Board
 {
-	private int[][] board;												//chess board
-	private int currentRow;												//current row knight is on
-	private int currentCol;												//current column knight is on
-	private int movesMade;												//counts moves made
+	private int[][] board;							//chess board
+	private int currentRow;							//current row knight is on
+	private int currentCol;							//current column knight is on
+	private int movesMade;							//counts moves made
 	private final int[] sideways = 	{ 2, 2,  1,  1, -2, -2, -1, -1 };	//reference for knight jumps
 	private final int[] upAndDown = {-1, 1, -2,  2, -1,  1, -2,  2 };	//reference for knight jumps
-	String[] moveSolution;												//will print the solution in algebraic notation 
+	String[] moveSolution;							//will print the solution in algebraic notation 
 	
 	/**
 	 * Constructor for board to test the knight tour problem.
