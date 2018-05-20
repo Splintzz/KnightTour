@@ -22,10 +22,10 @@ public class Board
 	{
 		this.currentRow = startingRow;		//initialize the starting row
 		this.currentCol = startingCol;		//initialize the starting column
-		movesMade = 0;						//initialize the amount of moves made
+		movesMade = 0;				//initialize the amount of moves made
 	
 		
-		board = new int[8][8];				//set up the board
+		board = new int[8][8];			//set up the board
 		board[currentRow][currentCol]++;	//set the current row and current column on the board to be already visited
 		
 		moveSolution = new String[64];		//set up the move solution array
@@ -70,12 +70,12 @@ public class Board
 	 */
 	public boolean makeMove()
 	{
-		boolean stillOptions = true;				//There are possible squares for the knight to jump to
-		boolean notMoved = true;					//Whether the knight has moves or not
+		boolean stillOptions = true;			//There are possible squares for the knight to jump to
+		boolean notMoved = true;			//Whether the knight has moves or not
 		int[] movesTriedArray = {8,8,8,8,8,8,8,8};	//Keeps track of the moves tried during the iterating
-		int movesTried = 0;							//Keeps track of how many moves tried during iteration
-		boolean duplicate = true;					//Used to help generate a random move that hasn't been tried
-		int rand = 8;								//random variable for picking a random move
+		int movesTried = 0;				//Keeps track of how many moves tried during iteration
+		boolean duplicate = true;			//Used to help generate a random move that hasn't been tried
+		int rand = 8;					//random variable for picking a random move
 		
 		while(notMoved && stillOptions) 			//keep looping if the knight hasn't moved and there are still moves to be tried 
 		{
@@ -112,7 +112,7 @@ public class Board
 			else
 			{//move cannot be made
 				movesTriedArray[movesTried] = rand;		//add the move that was tried to the movesTried array
-				movesTried++;							//a move has been tried
+				movesTried++;					//a move has been tried
 				stillOptions = movesTried < 8;			//there are still move options if less than 8 moves have been tried
 			}
 		}
@@ -124,7 +124,7 @@ public class Board
 	/**
 	 * Checks to see if the desired move can be made. 
 	 * @param r - the desired row
-	 * @param c	- the desired column
+	 * @param c - the desired column
 	 * @return true if the desired row and desired column is on the board and hasn't been visited. 
 	 */
 	public boolean canMakeMove(int r, int c)
@@ -161,7 +161,7 @@ public class Board
 	public boolean hasBeenSolved()
 	{
 		return moveSolution[63] != null;	//condition to be solved : the move solutions last element is not null
-											//in other words, 64 moves have been made and stored in the move solution array
+							//in other words, 64 moves have been made and stored in the move solution array
 	}
 	
 	/**
